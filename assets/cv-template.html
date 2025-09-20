@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Aldilla Hanifatunissa, Amd.Keb</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.2cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.3;
+            color: #333;
+            background: white;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            background: #2563eb;
+            color: white;
+            padding: 18px 25px;
+            margin-bottom: 18px;
+            border-radius: 6px;
+        }
+        
+        .header h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 0.3px;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            font-weight: 400;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 8px;
+            font-size: 8.5pt;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-icon {
+            font-size: 12pt;
+            width: 20px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 20px;
+        }
+        
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* Section Styling */
+        .section {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: #f8fafc;
+            padding: 8px 15px;
+            border-bottom: 2px solid #2563eb;
+        }
+        
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .section-content {
+            padding: 12px 15px;
+        }
+        
+        /* Profile */
+        .profile-text {
+            text-align: justify;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .tag {
+            background: #dc2626;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 9pt;
+            font-weight: 600;
+        }
+        
+        /* Experience */
+        .exp-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .exp-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .exp-header {
+            margin-bottom: 10px;
+        }
+        
+        .exp-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 3px;
+        }
+        
+        .exp-company {
+            font-size: 10pt;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        .exp-date {
+            background: #059669;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 9pt;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .exp-achievements {
+            margin-top: 8px;
+        }
+        
+        .achievement-list {
+            list-style: none;
+            margin: 5px 0;
+        }
+        
+        .achievement-list li {
+            padding: 3px 0 3px 20px;
+            position: relative;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        
+        .achievement-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: bold;
+        }
+        
+        .metric {
+            background: #059669;
+            color: white;
+            padding: 1px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+        
+        /* Skills */
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 2px 0 2px 15px;
+            position: relative;
+            font-size: 10pt;
+            line-height: 1.3;
+        }
+        
+        .skill-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #059669;
+            font-weight: bold;
+        }
+        
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .cert-item {
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #dc2626;
+        }
+        
+        .cert-name {
+            font-weight: 600;
+            font-size: 10pt;
+            color: #333;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+        
+        .cert-details {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        /* Education */
+        .edu-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .edu-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+        
+        .edu-details {
+            font-size: 10pt;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .gpa {
+            background: #059669;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 9pt;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+        
+        .contact-info-icon {
+            font-size: 12pt;
+            color: #2563eb;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-info-text {
+            font-size: 10pt;
+        }
+        
+        .contact-info-text strong {
+            display: block;
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 2px;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 9pt;
+            color: #666;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
+        }
+        
+        /* Utilities */
+        .text-center { text-align: center; }
+        .mb-small { margin-bottom: 10px; }
+        .font-bold { font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>ALDILLA HANIFATUNISSA, Amd.Keb</h1>
+            <p class="subtitle">Bidan Senior Bersertifikat | STR: OL00000350538376</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>aldillahanifatunissa05@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>082155338655</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Jalan Merawan 2 No 102, Kota Depok</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <span>linkedin.com/in/aldilla-hanifatunissa-54a634122</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Profile Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>🎯</span>
+                            PROFIL PROFESIONAL
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="profile-text">
+                            Bidan Senior dengan <strong>9+ tahun pengalaman</strong> spesialisasi PONED dan jaminan mutu. Terbukti menurunkan komplikasi persalinan <strong>25%</strong> dan meningkatkan quality metrics di berbagai institusi kesehatan.
+                        </div>
+                        <div class="expertise-tags">
+                            <span class="tag">PONED</span>
+                            <span class="tag">APN</span>
+                            <span class="tag">Emergency Care</span>
+                            <span class="tag">Quality Assurance</span>
+                            <span class="tag">Healthcare Management</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>🎓</span>
+                            PENDIDIKAN
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="edu-item">
+                            <div class="edu-title">D3 Kebidanan</div>
+                            <div class="edu-details">Akademi Kebidanan Budi Kemuliaan | Jakarta</div>
+                            <div class="edu-details">Agustus 2009 – September 2012</div>
+                            <span class="gpa">IPK: 3.31 | Cum Laude</span>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-title">SMAN 5 Depok</div>
+                            <div class="edu-details">Jurusan IPA | 2006-2009</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Skills -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>💪</span>
+                            KOMPETENSI INTI
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="skill-category">
+                            <h4>🏥 Keunggulan Klinis</h4>
+                            <ul class="skill-list">
+                                <li>Asuhan persalinan normal & komplikasi obstetri</li>
+                                <li>Gawat darurat obstetri & neonatal (PONED)</li>
+                                <li>Resusitasi neonatus & bantuan hidup dasar</li>
+                                <li>Deteksi dini kanker & pelayanan KB</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>⭐ Jaminan Mutu & Manajemen</h4>
+                            <ul class="skill-list">
+                                <li>Pengembangan SOP & clinical pathway</li>
+                                <li>Persiapan akreditasi (KARS)</li>
+                                <li>Kepemimpinan tim & staff development</li>
+                                <li>Claims analysis & medical review</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Experience Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>💼</span>
+                            PENGALAMAN PROFESIONAL
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Bidan Koordinator</div>
+                                <div class="exp-company">RS Murni Teguh Naripan Bandung</div>
+                                <span class="exp-date">Des 2022 – Nov 2023</span>
+                            </div>
+                            <div class="exp-achievements">
+                                <ul class="achievement-list">
+                                    <li>Kembangkan <span class="metric">15 SOP kebidanan</span> • Persiapan akreditasi <span class="metric">"Paripurna"</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Bidan Pelaksana</div>
+                                <div class="exp-company">Puskesmas Kecamatan Makasar | Jakarta Timur</div>
+                                <span class="exp-date">Jan 2018 – Nov 2021</span>
+                            </div>
+                            <div class="exp-achievements">
+                                <ul class="achievement-list">
+                                    <li>Cakupan ANC <span class="metric">78% → 92%</span> • Latih <span class="metric">45 kader</span> • AKN <span class="metric">8/1000 → 3/1000</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Analis Klaim Kesehatan</div>
+                                <div class="exp-company">Asuransi Reliance Health | Jakarta</div>
+                                <span class="exp-date">Jan 2017 – Des 2017</span>
+                            </div>
+                            <div class="exp-achievements">
+                                <ul class="achievement-list">
+                                    <li>Analisis <span class="metric">2,500+ klaim</span> (98% akurasi) • Fraud detection <span class="metric">Rp 850 juta</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div class="exp-title">Bidan Pelaksana • Helpline Outbound</div>
+                                <div class="exp-company">RSIA YPK Mandiri (2013-2016) | PT. Kartika (2024)</div>
+                                <span class="exp-date">Mar 2013 – Apr 2016, Jan-Jun 2024</span>
+                            </div>
+                            <div class="exp-achievements">
+                                <ul class="achievement-list">
+                                    <li><span class="metric">300+ persalinan</span> (98% success) • Customer satisfaction <span class="metric">4.1/5.0</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Education -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>🎓</span>
+                            PENDIDIKAN
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="edu-item">
+                            <div class="edu-title">D3 Kebidanan</div>
+                            <div class="edu-details">Akademi Kebidanan Budi Kemuliaan | Jakarta</div>
+                            <div class="edu-details">Agustus 2009 – September 2012</div>
+                            <span class="gpa">IPK: 3.31 | Cum Laude</span>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-title">SMAN 5 Depok</div>
+                            <div class="edu-details">Jurusan IPA | 2006-2009</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Skills -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>💪</span>
+                            KOMPETENSI INTI
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="skill-category">
+                            <h4>🏥 Keunggulan Klinis</h4>
+                            <ul class="skill-list">
+                                <li>Asuhan persalinan normal & komplikasi obstetri</li>
+                                <li>Gawat darurat obstetri & neonatal (PONED)</li>
+                                <li>Resusitasi neonatus & bantuan hidup dasar</li>
+                                <li>Deteksi dini kanker & pelayanan KB</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>⭐ Jaminan Mutu & Manajemen</h4>
+                            <ul class="skill-list">
+                                <li>Pengembangan SOP & clinical pathway</li>
+                                <li>Persiapan akreditasi (KARS)</li>
+                                <li>Kepemimpinan tim & staff development</li>
+                                <li>Claims analysis & medical review</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Top Certifications -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>🏆</span>
+                            SERTIFIKASI UTAMA
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="cert-grid">
+                            <div class="cert-item">
+                                <div class="cert-name">PONED</div>
+                                <div class="cert-details">Feb 2023</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-name">RJP</div>
+                                <div class="cert-details">Feb 2023</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-name">APN</div>
+                                <div class="cert-details">Ags 2012</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-name">Provider KB</div>
+                                <div class="cert-details">Jun 2020</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-name">BHD</div>
+                                <div class="cert-details">Des 2022</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-name">Patient Safety</div>
+                                <div class="cert-details">Des 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Info -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>📞</span>
+                            INFORMASI KONTAK
+                        </h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="contact-grid">
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">📧</span>
+                                <div class="contact-info-text">
+                                    <strong>Email</strong>
+                                    aldillahanifatunissa05@gmail.com
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">📱</span>
+                                <div class="contact-info-text">
+                                    <strong>Telepon</strong>
+                                    082155338655
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">📍</span>
+                                <div class="contact-info-text">
+                                    <strong>Alamat</strong>
+                                    Jalan Merawan 2 No 102, Kota Depok
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">🆔</span>
+                                <div class="contact-info-text">
+                                    <strong>STR</strong>
+                                    OL00000350538376
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Referensi dan dokumen sertifikat original tersedia saat interview</strong></p>
+            <p>CV dioptimalkan untuk industri kesehatan Indonesia • 2024</p>
+        </footer>
+    </div>
+</body>
+</html>
